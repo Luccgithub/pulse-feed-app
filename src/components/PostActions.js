@@ -30,15 +30,17 @@ export default function PostActions({
       <Action icon="chatbubble-outline" value={replies} />
       <Action icon="repeat-outline" value={reposts} />
 
-      {/* TODO 2: Connect the Like action from Step 3. */}
       <Action
         icon={liked ? 'heart' : 'heart-outline'}
         value={likes + (liked ? 1 : 0)}
         color={liked ? colors.like : undefined}
-        onPress={() => {}}
+        onPress={() => onLike(id)}
       />
 
-      <Action icon="stats-chart-outline" value={views >= 1000 ? `${(views / 1000).toFixed(1)}K` : views} />
+      <Action
+        icon="stats-chart-outline"
+        value={views >= 1000 ? `${(views / 1000).toFixed(1)}K` : views}
+      />
 
       {/* TODO 3: Connect the Bookmark action from Step 4. */}
       <Action
