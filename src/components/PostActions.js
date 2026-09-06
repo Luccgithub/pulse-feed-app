@@ -42,11 +42,10 @@ export default function PostActions({
         value={views >= 1000 ? `${(views / 1000).toFixed(1)}K` : views}
       />
 
-      {/* TODO 3: Connect the Bookmark action from Step 4. */}
       <Action
         icon={bookmarked ? 'bookmark' : 'bookmark-outline'}
         color={bookmarked ? colors.accent : undefined}
-        onPress={() => {}}
+        onPress={() => onBookmark(id)}
       />
     </View>
   );
