@@ -3,14 +3,14 @@ import { FlatList, SafeAreaView, StyleSheet } from 'react-native';
 import FeedHeader from '../components/FeedHeader';
 import FeedTabs from '../components/FeedTabs';
 import PostCard from '../components/PostCard';
-import EmptyFeed from '../components/EmptyFeed';
 import LoadingState from '../components/LoadingState';
+import EmptyFeed from '../components/EmptyFeed';
 import BottomNavigation from '../components/BottomNavigation';
 import posts from '../data/posts';
 import { colors } from '../utils/theme';
 
 export default function FeedScreen() {
-  const [selectedFeed, setSelectedFeed] = useState('for-you');
+  const [selectedFeed, setSelectedFeed] = useState('forYou');
   const [likedIds, setLikedIds] = useState([]);
   const [bookmarkedIds, setBookmarkedIds] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -65,7 +65,7 @@ export default function FeedScreen() {
 
       <FeedTabs
         selectedFeed={selectedFeed}
-        onSelectFeed={setSelectedFeed}
+        onChangeFeed={setSelectedFeed}
       />
 
       {loading ? (
@@ -91,6 +91,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listContent: {
-    paddingBottom: 24,
+    flexGrow: 1,
   },
 });
