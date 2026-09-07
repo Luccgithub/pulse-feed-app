@@ -23,8 +23,13 @@ export default function FeedScreen() {
     return () => clearTimeout(timer);
   }, []);
 
-  // TODO 5: Replace with the filtered feed code from Step 6.
-  const visiblePosts = posts;
+  const visiblePosts = useMemo(() => {
+    if (selectedFeed === 'following') {
+      return posts.filter((post) => post.following);
+    }
+
+    return posts;
+  }, [selectedFeed]);
 
   function handleLike(id) {
     // TODO 6: Add like state from Step 7.
