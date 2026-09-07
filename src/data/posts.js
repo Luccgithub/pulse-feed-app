@@ -55,8 +55,20 @@ const posts = [
     views: 16700,
     following: false,
   },
-
-  // TODO 1: Add the original student-created post from Step 2.
+  {
+    id: 'post-205',
+    displayName: 'Jordan Miles',
+    username: 'jmiles',
+    time: '3h',
+    content: 'Small UI details matter: consistent icon sizing, clean dividers, and readable spacing can completely change how polished a mobile feed feels.',
+    avatar: require('../assets/images/you.png'),
+    imageSource: null,
+    replies: 6,
+    reposts: 17,
+    likes: 144,
+    views: 5200,
+    following: true,
+  },
 ];
 
 export default posts;
