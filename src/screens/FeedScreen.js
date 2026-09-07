@@ -40,7 +40,11 @@ export default function FeedScreen() {
   }
 
   function handleBookmark(id) {
-    // TODO 7: Add bookmark state from Step 8.
+    setBookmarkedIds((current) =>
+      current.includes(id)
+        ? current.filter((postId) => postId !== id)
+        : [...current, id]
+    );
   }
 
   function renderPost({ item }) {
